@@ -10,24 +10,20 @@ $(document).ready(function() {
     
     $('a[href*="#"]').on('click',function(e){
           $('html,body').animate({
-            scrollTop: $($(this).attr('href')).offset().top - 100
+            scrollTop: $($(this).attr('href')).offset().top - 115
           },500);
           e.preventDefault();
         });
           
-    // $('.navbar-nav>li>a').on('click', function(){
-    //   $('.navbar-collapse').collapse('hide');
-    //   });
       $('.navbar-collapse a').click(function(){
         $(".navbar-collapse").collapse('hide');
       });
 
     $(window).scroll(function() {
       var scrollbarLocation = $(this).scrollTop();
-      console.log(scrollbarLocation);
       scrollLink.each(function() {
         
-        var sectionOffset = $(this.hash).offset().top - 100;
+        var sectionOffset = $(this.hash).offset() - 115;
     
         if ( sectionOffset <= scrollbarLocation ) {
           $(this).parent().addClass('active');
